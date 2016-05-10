@@ -11,4 +11,7 @@ from scrapy.item import Item, Field
 class BookmarksItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    text = Field()
+    name = Field()
+    anchors = Field()
+    description = Field()
+    last_updated = Field(serializer=str)

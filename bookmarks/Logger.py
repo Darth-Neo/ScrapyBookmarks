@@ -20,16 +20,14 @@ class NullHandler(logging.Handler):
         pass
 
 
-def mkdirp(directory):
-    if not os.path.isdir(directory):
-        os.makedirs(directory)
-
-
 def setupLogging(name):
     #
     # Logging setup
     #
-    mkdirp(u"logs")
+
+    if not os.path.isdir(u"logs"):
+        os.makedirs(u"logs")
+
     logger = logging.getLogger(name)
     logFile = u'./logs/log.txt'
 

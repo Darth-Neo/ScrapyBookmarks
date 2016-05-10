@@ -2,17 +2,18 @@
 
 # Define your item pipelines here
 #
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
+# Don"t forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 from pymongo import MongoClient
 from scrapy.conf import settings
 
 from Logger import *
 logger = setupLogging(__name__)
-logger.setLevel(DEBUG)
+logger.setLevel(INFO)
 
 
 class BookmarksPipeline(object):
+
     def process_item(self, item, spider):
         return item
 
