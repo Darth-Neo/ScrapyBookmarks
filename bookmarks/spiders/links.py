@@ -41,7 +41,8 @@ class LinksSpider(Spider):
             item[u"title"] = sel.xpath(u"//title/text()").extract()
             item[u'keywords'] = sel.xpath(u"//meta[@name='keywords']/text()").extract()
             item[u"description"] = sel.xpath(u"//meta[@name='description']/text()").extract()
-            item[u"anchors"] = sel.xpath(u'//a/@href').extract()
+            # item[u"anchorss"] = sel.xpath(u'//a/@href').extract()
+            item[u"anchors"] = sel.xpath(u"//a[contains(@href, 'http')]/@href").extract()
             item[u"last_updated"] = str(datetime.now())
 
             n += 1
